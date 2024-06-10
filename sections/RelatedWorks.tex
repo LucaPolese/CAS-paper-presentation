@@ -1,0 +1,65 @@
+\section{Related Works}
+\begin{frame}{Indoor Localization $\sim$ Wifi-based}
+
+	\greent{PROS}
+	\begin{itemize}[<+->]
+		\item Popular method that uses existing WiFi infrastructures, reducing deployment cost;
+		\item Converts received signal strength (RSS) to distance for triangulation;
+		\item Recent works use channel state information (CSI) for centimeter-level accuracy.
+	\end{itemize}
+	\pause
+	\redt{CONS}
+	\begin{itemize}[<+->]
+		\item Low accuracy due to multipath effects in complex indoor environments;
+		\item Requires knowledge of access point (AP) locations (difficult to obtain in public spaces);
+		\item Fingerprinting methods based on RSS are time-consuming and
+		\item CSI-based localization achieves high accuracy but has limited smartphone support.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Indoor Localization $\sim$ Dead Reckoning}
+	\greent{PROS}
+	\begin{itemize}[<+->]
+		\item Uses inertial sensor readings for real-time location estimation of a target.
+		\item No extra infrastructure required,
+		\item Integration with other techniques (WiFi, UWB, vision) can improve accuracy.
+	\end{itemize}
+	\pause
+	\redt{CONS}
+	\begin{itemize}[<+->]
+		\item It suffers from accumulated error: localization accuracy decreases over time;
+		\item This leads to a long-term DR being useless.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Spatial Information-Aided Localization}
+
+	\begin{block}{Spatial Information-Aided Localization}
+		Spatial knowledge aids indoor localization without extra hardware costs.
+	\end{block}
+	\pause
+	\begin{itemize}[<+->]
+		\item \textbf{Landmark matching}: map matching method
+		\item \greent{PROS}
+			\begin{itemize}
+				\item Simple \& high operation efficient.
+			\end{itemize}
+		\item \redt{CONS}
+			\begin{itemize}
+				\item Sensitive to landmark detection completeness;
+				\item Inaccurate matching may lead to a larger localization error;
+			\end{itemize}
+		\item \textbf{Methods of Fusing Spatial Information}
+		\item \greent{PRO}
+			\begin{itemize}
+				\item Includes richer information than basic indoor maps.
+			\end{itemize}
+		\item \redt{CON}
+			\begin{itemize}
+				\item Automated reconstruction methods are in early stages, manual methods are labor-intensive and slow.
+			\end{itemize}
+	\end{itemize}
+
+\end{frame}
