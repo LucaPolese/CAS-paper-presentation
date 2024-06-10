@@ -1,0 +1,22 @@
+# LaTeX project .gitignore
+
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+
+
+# LaTeX editor temporary files
+*.swp
+*.synctex(busy)
+*.vrb
