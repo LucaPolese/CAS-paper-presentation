@@ -1,0 +1,54 @@
+\section{Landmark Matching}
+\begin{frame}{Challenges in Using Landmarks for Localization}
+    \begin{itemize}
+        \item \textbf{Relevant challenges to tackle}:
+        \begin{itemize} 
+            \item \textbf{Data Association Issue}: Difficulty in determining the detected landmark when multiple landmarks are nearby;
+            \item \textbf{Missing Landmarks}: Addressing cases where one or more landmarks are absent.
+        \end{itemize}
+        \item To solve the previous point it has been defined a \textbf{belief}:
+        \begin{itemize}
+            \item Belief (\( bel \)): Indicates trust level that a location point matches a landmark;
+            \item Belief Calculation Formula:
+            \[
+                bel(v_k) = \delta(R_k, R_t) \cdot r(\theta_k, \theta_t) \cdot g(d_k, d_t)
+            \]
+            \item Components:
+                  \begin{itemize}
+                    \item \( \delta(R_k, R_t) \): Dirac delta function for detection rule matching;
+                    \item \( r(\theta_k, \theta_t) \): Rectangle function for heading comparison;
+                    \item \( g(d_k, d_t) \): Exponential function for distance comparison.
+                \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Functions Definitions}
+    \begin{itemize}
+        \item Dirac Delta Function (\( \delta \)):
+              \[
+                  \delta(R_k, R_t) = \begin{cases}
+                      1, & \text{if } R_k == R_t \\
+                      0, & \text{otherwise}
+                  \end{cases}
+              \]
+        \item Rectangle Function (\( r \)):
+              \[
+                  r(\theta_k, \theta_t) = \begin{cases}
+                      1, & \text{if } |\theta_k - \theta_t| < \theta \text{ threshold} \\
+                      0, & \text{otherwise}
+                  \end{cases}
+              \]
+        \item Exponential Distance Function (\( g \)):
+              \[
+                  g(d_k, d_t) = e^{-|d_k - d_t|}
+              \]
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Landmark Selection and Error Correction}
+    \begin{itemize}
+        \item Select the landmark with the highest belief (\( bel \));\item Use a belief threshold (\( bel \)) to exclude fake landmarks;\item Ignore missing landmarks and do not correct the location until the next landmark is detected.\end{itemize}
+\end{frame}
