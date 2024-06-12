@@ -3,7 +3,7 @@
     \begin{itemize}
         \item \textbf{GNSS} has been successfully applied in many fields:
     \end{itemize}
-    \pause
+
     \begin{figure}[!htb]
         \centering
         \begin{subfigure}[b]{0.3\textwidth}
@@ -29,22 +29,21 @@
            \caption{Some examples of application}
            \label{gnss}
     \end{figure}
-    \pause
+
     \begin{itemize}   
         \item It's \textbf{difficult to use} for inside location: \textbf{signal} is \textit{blocked} by buildings, trees, obstacles, ...
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Indoor localization}
-    \begin{itemize}[<+->]
+    \begin{itemize}
         \item It's even more \textbf{challenging}:
             \begin{itemize}
-                \item Indoor spaces are more \textbf{complicated} in terms of \textit{layout}, \textit{topology}, \textit{space constraint};
-                \item Indoor applications need more \textbf{accuracy}
+                \item Indoor spaces are more \textbf{complicated} in terms of \textit{layout}, \textit{topology}, \textit{space constraint};\item Indoor applications need more \textbf{accuracy}.
             \end{itemize}
         \item Multiple systems have been proposed in recent years:
         \end{itemize}
-        \pause
+    
         \begin{figure}[!htb]
             \centering
             \begin{subfigure}[t]{0.24\textwidth}
@@ -77,7 +76,7 @@
                \caption{Some examples of indoor localization systems}
                \label{indoor}
         \end{figure}
-        \pause
+    
         \begin{itemize}
         \item Each technique has \textbf{drawbacks} in terms of accuracy, cost coverage, complexity and applicability.
     \end{itemize}
@@ -85,21 +84,21 @@
 
 \begin{frame}{Hybrid methods}
     \greent{PRO}
-    \pause
+
     \begin{itemize}
-        \item Used to reach higher accuracy with relatively low cost
+        \item Used to reach higher accuracy with relatively low cost.
     \end{itemize}
-    \pause
+
     \vspace{10pt}
     \redt{CON}
-    \pause
+
     \begin{itemize}
-        \item The required infrastructures may not be available in many environments or at a high cost
+        \item The required infrastructures may not be available in many environments or at a high cost.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Spatial knowledge}
-    \begin{itemize}[<+-| @alert +>]
+    \begin{itemize}
         \item Available in many scenarios;
         \item It's used to assist localization without additional costs;
         \item Helpful for calibrating the localization error.
@@ -110,7 +109,7 @@
     \begin{block}{Definition of \textbf{landmark}}
         A \textbf{landmark} is generally defined in the field of linguistics and cognitive science as everything that stands out of the background.
     \end{block}
-    \pause
+
     In the context of indoor localization, a landmark is 
     \begin{block}{Definition of \textbf{landmark} for indoor localization}
         A location point where at least one sensor presents a distinctive, stable  and identifiable pattern in the reading. Points are typically naturally distributed in indoor environments.
@@ -120,19 +119,17 @@
 
 \begin{frame}
     \greent{PROS}
-    \pause 
-    \begin{itemize}[<+->]
-        \item Location points are naturally distributed in indoor environments;
-        \item So $\rightarrow$ localization error easy to bound if combined;
-        \item No extra cost required.
+ 
+    \begin{itemize}
+        \item Location points are naturally distributed in indoor environments;\item So $\rightarrow$ localization error easy to bound if combined;\item No extra cost required.
     \end{itemize}
-    \pause
+
     \redt{CONS}
-    \begin{itemize}[<+->]
+    \begin{itemize}
         \item Economically or/and computationally expensive;
         \item Systems that use laser scanner and/ora cameras to do so are not suitable for indo pedestrian localization;
         \item Performances rely highly on the completeness of landmarks;
-        \item A mismatch of landmarks causes large localization errors (= failure of localization). 
+        \item A mismatch of landmarks causes large localization errors (= failure of localization).
     \end{itemize}
 \end{frame}
 
@@ -140,14 +137,14 @@
     \begin{block}{Landmark-Guided Localization}
         It's a novel graph-based indoor localization method for smartphones
     \end{block}
-    \pause
+
     Compared with existing landmark-based localization methods:
-    \begin{itemize}[<+->]
+    \begin{itemize}
         \item Computationally efficient;
         \item Handles incomplete landmarks;
         \item It uses landmarks to guide the localization process.
     \end{itemize}
-    \pause
+
     \begin{block}{Landmark graph}
         It's a directed graph where nodes are landmarks and edges are accessible paths with heading information
     \end{block}
@@ -155,17 +152,17 @@
 
 \begin{frame}{LG-Loc $\sim$ Phases}
     This method consists of two phases:
-    \pause
-    \begin{enumerate}[<+->]
+
+    \begin{enumerate}
         \item \textit{offline}: data from several smartphones sensors are collected. With these data th initial landmark graph is constructed. We update the landmark graph by adding more landmarks;
         \item \textit{online}: newly collected data are used for location initialization, estimation and calibration.
     \end{enumerate} 
-    \pause
+
     The initial location is inferred by a Hidden Markov model-based method and the location is regularly calibrated by matching the detected landmark with those in the landmark graph. 
 \end{frame}
 
 \begin{frame}{Challenges}
-    \begin{enumerate}[<+->]
+    \begin{enumerate}
         \item Infer the initial location without manual input;
         \item Recognize landmarks satisfying;
         \item Deal with a landmark association issue and missing landmarks.
