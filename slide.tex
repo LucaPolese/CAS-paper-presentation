@@ -69,11 +69,17 @@
 \tcbset{highlight math style={enhanced, colframe=red!60!black, colback=white,arc=4pt, boxrule=1pt, drop fuzzy shadow}}
 
 % \highlight[<colour>]{<stuff>}
-\newcommand{\highlight}[2][yellow]{\mathchoice%
-  {\colorbox{#1}{$\displaystyle#2$}}%
-  {\colorbox{#1}{$\textstyle#2$}}%
-  {\colorbox{#1}{$\scriptstyle#2$}}%
-  {\colorbox{#1}{$\scriptscriptstyle#2$}}}%
+\newcommand{\highlight}[2][yellow]{%
+  \ifmmode%
+    \mathchoice%
+      {\colorbox{#1}{$\displaystyle#2$}}%
+      {\colorbox{#1}{$\textstyle#2$}}%
+      {\colorbox{#1}{$\scriptstyle#2$}}%
+      {\colorbox{#1}{$\scriptscriptstyle#2$}}%
+  \else%
+    \colorbox{#1}{#2}%
+  \fi%
+}
 
   \NewEnviron{alignteo}{
     {\tiny

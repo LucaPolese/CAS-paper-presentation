@@ -16,11 +16,7 @@
         The participants walked along the preset path with the phone in hand and reported the preset markers they encountered to evaluate the location accuracy.
     \end{block}
     \begin{itemize}
-        \item Recorded data:
-            \begin{itemize}
-                \item \textbf{MAC addresses} of visible WiFi access points and \textbf{RSS};
-                \item Sensor readings from accelerometer, gyroscope, compass, barometer, light sensor.
-            \end{itemize}
+        \item Recorded data: \textbf{MAC addresses} of visible WiFi access points and \textbf{RSS};
         \item All data timestamped for alignment and inference;
         \item Participants clicked markers on Android app to set the locations.
     \end{itemize}
@@ -28,15 +24,13 @@
 
 \begin{frame}{Step Counting and Step Length Estimation}
     \begin{itemize}
-        \item Step counting step detection and step length estimation have an impact on the accuracy of localization: participant was asked to walk 300 steps;
+        \item \textbf{Step counting step detection} and \textbf{step length} estimation have an impact on the \textit{accuracy of localization}: participants were asked to walk \textit{300 steps};
         \item Accuracy of step counting:
             \begin{itemize}
-                \item Peak detection: $\sim$ 94\%;
-                \item Peak detection with constraints: > 97\%.
+                \item Detection with/without constraints: > 94\%;
             \end{itemize}
         \item Step length estimation:
             \begin{itemize}
-                \item Based on stable step length during natural walking;
                 \item Step length influenced by walking frequency (step periodicity);
                 \item Step periodicity stability: Most steps in [0.5, 0.7] interval.
             \end{itemize}
@@ -52,24 +46,24 @@
 \end{frame}
 
 \begin{frame}{Numerical results}
+    \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+    \addtolength{\leftmargini}{\labelsep}
     \begin{itemize}
         \item \textit{Performance}:
             \begin{itemize}
-                \item \textit{Proposed method}: \textbf{88\% accuracy} with \textbf{error <1.5 m};
-                \item[]
-                \item \textit{Map filtering method}: \textbf{63\% accuracy};
-                \item \textit{WiFi fingerprinting method}: \textbf{33\% accuracy};
-                \item \textit{PDR methods}: \textbf{Worst performance} due to lack of spatial constraints.
+                \item \highlight[sage]{\textit{Proposed method}}: \textbf{88\% accuracy} with \textbf{error < 1.5 m};
+                \item \highlight[cream]{\textit{Map filtering method}}: \textbf{63\% accuracy};
+                \item \highlight[cream]{\textit{WiFi fingerprinting method}}: \textbf{33\% accuracy};
+                \item \highlight[cream]{\textit{PDR methods}}: \textbf{Worst outcome} $\rightarrow$ lack of spatial constraints.
             \end{itemize}
         \item \textit{Mean error}:
             \begin{itemize}
-                \item \textit{Proposed method}: \textbf{0.80 m};
-                \item[]
-                \item \textit{Map filtering method}: \textbf{$\sim$ 1.7 m};
-                \item \textit{WiFi fingerprinting method}: \textbf{3.5 m};
-                \item \textit{PDR methods}: \textbf{> 7 m}.
+                \item \highlight[sage]{\textit{Proposed method}}: \textbf{0.80 m};
+                \item \highlight[cream]{\textit{Map filtering method}}: \textbf{$\sim$ 1.7 m};
+                \item \highlight[cream]{\textit{WiFi fingerprinting method}}: \textbf{3.5 m};
+                \item \highlight[cream]{\textit{PDR methods}}: \textbf{> 7 m}.
             \end{itemize}
-        \item \textit{Efficiency} - comparison with \textit{map filtering method}:
+        \item \textit{Efficiency} - comparison with \highlight[cream]{\textit{Map filtering method}}:
             \begin{itemize}
                 \item $\sim$ 5 times faster;
                 \item Landmark graph-based correction, no wall/obstacle detection;
