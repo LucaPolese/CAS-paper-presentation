@@ -13,12 +13,6 @@
             \[
                 bel(v_k) = \highlight[tangerine]{\delta(R_k, R_t)} \cdot \highlight[cream]{r(\theta_k, \theta_t)} \cdot \highlight[sage]{g(d_k, d_t)}
             \]
-            \item Components:
-                  \begin{itemize}
-                    \item \( \highlight[tangerine]{\delta(R_k, R_t)} \): Dirac delta function for \textit{detection rule matching};
-                    \item \( \highlight[cream]{r(\theta_k, \theta_t)} \): Rectangle function for \textit{heading comparison};
-                    \item \( \highlight[sage]{g(d_k, d_t)} \): Exponential function for \textit{distance comparison}.
-                \end{itemize}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -28,7 +22,7 @@
     \begin{itemize}
         \begin{columns}
             \begin{column}{0.6\textwidth}
-                \item Dirac Delta Function (\( \delta \)):
+                \item Dirac Delta Function (\( \delta \)) for \textit{detection rule matching}:
                 \item[] $ \!
                     \begin{aligned}
                         \highlight[tangerine]{\delta(R_k, R_t)} = \begin{cases}
@@ -37,7 +31,7 @@
                         \end{cases}
                     \end{aligned}
                 $
-                \item Rectangle Function (\( r \)):
+                \item Rectangle Function (\( r \)) for \textit{heading comparison}:
                 \item[] $ \!
                     \begin{aligned}
                         \highlight[cream]{r(\theta_k, \theta_t)} = \begin{cases}
@@ -46,7 +40,7 @@
                           \end{cases}
                     \end{aligned}
                 $
-                \item Exponential Distance Function (\( g \)):
+                \item Exponential Distance Function (\( g \)) for \textit{distance comparison}:
                 \item[] $ \!
                     \begin{aligned}
                         \highlight[sage]{g(d_k, d_t)} = e^{-|d_k - d_t|}
@@ -63,5 +57,4 @@
             \end{column}
         \end{columns}
     \end{itemize}
-
 \end{frame}
