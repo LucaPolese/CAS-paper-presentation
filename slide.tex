@@ -4,7 +4,7 @@
 
 % other packages
 \usepackage{latexsym, amsmath, mathtools, xcolor, multicol, booktabs, empheq}
-\usepackage{graphicx,pstricks,listings,stackengine, datetime, subcaption}
+\usepackage{graphicx, pstricks, listings, stackengine, datetime, subcaption}
 \usepackage[skins,theorems]{tcolorbox}
 \usepackage[font=scriptsize,labelfont=bf]{caption}
 \usepackage[ruled,vlined]{algorithm2e}
@@ -68,11 +68,20 @@
 
 \tcbset{highlight math style={enhanced, colframe=red!60!black, colback=white,arc=4pt, boxrule=1pt, drop fuzzy shadow}}
 
-\NewEnviron{alignteo}{
-  \begin{empheq}[box=\tcbhighmath]{align*}
-  \BODY
-  \end{empheq}
-}
+% \highlight[<colour>]{<stuff>}
+\newcommand{\highlight}[2][yellow]{\mathchoice%
+  {\colorbox{#1}{$\displaystyle#2$}}%
+  {\colorbox{#1}{$\textstyle#2$}}%
+  {\colorbox{#1}{$\scriptstyle#2$}}%
+  {\colorbox{#1}{$\scriptscriptstyle#2$}}}%
+
+  \NewEnviron{alignteo}{
+    {\tiny
+    \begin{empheq}[box=\tcbhighmath]{align*}
+    \BODY
+    \end{empheq}
+    }
+  }
 
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
@@ -83,18 +92,15 @@
 \end{frame}
 
 \input{sections/Introduction.tex}
-\input{sections/RelatedWorks.tex}
+%\input{sections/RelatedWorks.tex}
 \input{sections/SystemOverview.tex}
 \input{sections/LandmarkGraph.tex}
 \input{sections/LandmarkMatching.tex}
+\input{sections/LocationEstimation.tex}
+\input{sections/ExperimentsAndResults.tex}
+\input{sections/Conclusion.tex}
 
-
-% \input{sections/LocationEstimation.tex}
-% \input{sections/ExperimentsAndResults.tex}
-% \input{sections/Discussion.tex}
-% \input{sections/Conclusion.tex}
-
-\section{Bibliography}
+\section[Biblio]{Bibliography}
 \begin{frame}{Bibliography}
     \printbibliography[heading=none]
 \end{frame}

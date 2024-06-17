@@ -1,0 +1,28 @@
+\section[Esteem]{Location Estimation}
+
+\begin{frame}{Location Initialization}
+    
+    \textbf{Standard methods}
+    
+    \begin{itemize}
+        \item \textit{WiFi Fingerprinting Method}:
+            \begin{itemize}
+                \item \textbf{Matches} new \textit{WiFi fingerprints} with a \textit{pre-collected database}
+                \item Requires \textbf{offline training}, which is time-consuming and labor-intensive
+            \end{itemize}    
+        \item \textit{User Input Method}:
+            \begin{itemize}
+                \item User inputs \textbf{initial location} when launching the app
+                \item Easy deployment but requires \textbf{active user participation}
+            \end{itemize}
+    \end{itemize}
+    
+    \textbf{Landmark Graph-based HMM Approach}
+    \begin{itemize}
+        \item Initially the app has no location information of the user;
+        \item User walks to collect sensor readings for location estimation;
+        \item Sensor readings used to fed the landmark recognition module;
+        \item This way it generates observations to detect landmarks.
+    \end{itemize}
+
+\end{frame}

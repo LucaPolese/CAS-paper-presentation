@@ -34,6 +34,9 @@
 \useinnertheme{circles}
  
 \xdefinecolor{darkred}{rgb}{0.73, 0.18, 0.16}
+\xdefinecolor{sage}{rgb}{0.78, 0.82, 0.67}
+\xdefinecolor{cream}{rgb}{0.99, 0.86, 0.58}
+\xdefinecolor{tangerine}{rgb}{0.94, 0.62, 0.4}
 
 \setbeamercolor{footline}{bg=darkred}
 \setbeamercolor{frametitle}{bg=darkred,fg=white}
@@ -72,9 +75,19 @@
 \setbeamercolor{structure}{fg=darkred}
 \setbeamercolor{subsection in sidebar}{fg=brown}
 \setbeamercolor{subsection in sidebar shaded}{fg=grey}
+
+\usepackage{totcount}
+\regtotcounter{section}
 \AtBeginSection[]{
 	\begin{frame}
-		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+		\begin{columns}[t]
+			\begin{column}{.45\textwidth}
+				\tableofcontents[sections=1-{\numexpr\totvalue{section}/2\relax},sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+			\end{column}
+			\begin{column}{.45\textwidth}
+				\tableofcontents[sections={\numexpr\totvalue{section}/2+1\relax}-,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+			\end{column}
+		\end{columns}
 	\end{frame}
 }
 \AtBeginSubsection[]{

@@ -1,32 +1,38 @@
-\section{Related Works}
-\begin{frame}{Indoor Localization $\sim$ Wifi-based}
-	\greent{PROS}
-	\begin{itemize}
-		\item Popular method that uses existing WiFi infrastructures, reducing deployment cost;
-		\item Converts received signal strength (RSS) to distance for triangulation;
-		\item Recent works use channel state information (CSI) for centimeter-level accuracy.
-	\end{itemize}
-	\redt{CONS}
-	\begin{itemize}
-		\item Low accuracy due to multipath effects in complex indoor environments;
-		\item Requires knowledge of access point (AP) locations (difficult to obtain in public spaces);
-		\item Fingerprinting methods based on RSS are time-consuming;
-		\item CSI-based localization achieves high accuracy but has limited smartphone support.
-	\end{itemize}
-\end{frame}
+\section[Works]{Related Works}
 
-\begin{frame}{Indoor Localization $\sim$ Dead Reckoning}
-	\greent{PROS}
-	\begin{itemize}
-		\item Uses inertial sensor readings for real-time location estimation of a target;
-		\item No extra infrastructure required;
-		\item Integration with other techniques (WiFi, UWB, vision) can improve accuracy.
-	\end{itemize}
-	\redt{CONS}
-	\begin{itemize}
-		\item It suffers from accumulated error: localization accuracy decreases over time;
-		\item This leads to a long-term DR being useless.
-	\end{itemize}
+\begin{frame}{Indoor Localization Methods}
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\textbf{Wifi-based:}\\
+			\greent{PROS}
+			\begin{itemize}
+				\item Uses existing WiFi infrastructure, < costs;
+				\item Converts RSS to distance for triangulation.
+			\end{itemize}
+			\redt{CONS}
+			\begin{itemize}
+				\item Low accuracy due to multipath effects in complex indoor envs;
+				\item Requires knowledge of AP locations, difficult in public spaces;
+				\item RSS fingerprinting is time-consuming.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\textbf{Dead Reckoning:}\\
+			\greent{PROS}
+			\begin{itemize}
+				\item Uses inertial sensor readings for RT location estimation;
+				\item No extra infrastructure required;
+				\item Integration with other techniques can improve accuracy.
+			\end{itemize}
+			\redt{CONS}
+			\begin{itemize}
+				\item Suffers from accumulated error, reducing accuracy over time;
+				\item Long-term DR is ineffective.
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 

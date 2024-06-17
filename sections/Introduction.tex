@@ -1,4 +1,4 @@
-\section{Introduction}
+\section[Intro]{Introduction}
 \begin{frame}{\textbf{G}lobal \textbf{N}avigation \textbf{S}atellite \textbf{S}ystem}
     \begin{itemize}
         \item \textbf{GNSS} has been successfully applied in many fields:
@@ -82,89 +82,61 @@
     \end{itemize}
 \end{frame}
 
-% \begin{frame}{Hybrid methods}
-%     \greent{PRO}
-
-%     \begin{itemize}
-%         \item Used to reach higher accuracy with relatively low cost.
-%     \end{itemize}
-
-%     \vspace{10pt}
-%     \redt{CON}
-
-%     \begin{itemize}
-%         \item The required infrastructures may not be available in many environments or at a high cost.
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Spatial knowledge}
-%     \begin{itemize}
-%         \item Available in many scenarios;
-%         \item It's used to assist localization without additional costs;
-%         \item Helpful for calibrating the localization error.
-%     \end{itemize}
-% \end{frame}
-
 \begin{frame}{Landmark}
-    \begin{block}{Definition of \textbf{landmark}}
-        A \textbf{landmark} is generally defined in the field of linguistics and cognitive science as everything that stands out of the background.
+    \begin{block}{Landmark for \textbf{Indoor Localization}}
+        A landmark is a \textbf{spatial constraint}.\\
+        It's a location point where \textit{at least one sensor} shows a \textbf{distinctive}, \textbf{stable}, and \textbf{identifiable pattern}.
     \end{block}
-
-    In the context of indoor localization, a landmark is 
-    \begin{block}{Definition of \textbf{landmark} for indoor localization}
-        A location point where at least one sensor presents a distinctive, stable  and identifiable pattern in the reading. Points are typically naturally distributed in indoor environments.
-    \end{block}
-\end{frame}
-
-
-\begin{frame}
-    \greent{PROS}
- 
+    
+    \greent{Advantages}
     \begin{itemize}
-        \item Location points are naturally distributed in indoor environments;\item So $\rightarrow$ localization error easy to bound if combined;\item No extra cost required.
+        \item \textbf{Naturally distributed} location points in indoor environments;
+        \item \textbf{Easy to bound} the localization \textbf{error} with no extra cost.
     \end{itemize}
-
-    \redt{CONS}
+    
+    \redt{Disadvantages}
     \begin{itemize}
-        \item Economically or/and computationally expensive;
-        \item Systems that use laser scanner and/ora cameras to do so are not suitable for indo pedestrian localization;
-        \item Performances rely highly on the completeness of landmarks;
-        \item A mismatch of landmarks causes large localization errors (= failure of localization).
+        \item \textbf{Economically} and \textbf{computationally expensive} systems;
+        \item \textbf{Performance} depends on \textbf{completeness of landmarks};
+        \item \textbf{Mismatch} of landmarks causes \textbf{large} localization \textbf{errors}.
     \end{itemize}
+    
 \end{frame}
 
 \begin{frame}{LG-Loc}
     \begin{block}{Landmark-Guided Localization}
-        It's a novel graph-based indoor localization method for smartphones
+        It's a novel \textbf{graph-based indoor localization} method for smartphones
     \end{block}
 
     Compared with existing landmark-based localization methods:
     \begin{itemize}
-        \item Computationally efficient;
-        \item Handles incomplete landmarks;
-        \item It uses landmarks to guide the localization process.
+        \item Computationally \textbf{efficient};
+        \item Handles \textbf{incomplete landmarks}.
     \end{itemize}
 
     \begin{block}{Landmark graph}
-        It's a directed graph where nodes are landmarks and edges are accessible paths with heading information
+        It's a \textbf{directed graph} where nodes are landmarks and edges are accessible paths with heading information
     \end{block}
 \end{frame}
 
-\begin{frame}{LG-Loc $\sim$ Phases}
-    This method consists of two phases:
-
+\begin{frame}{LG-Loc $\sim$ Phases \& Challenges}
+    This method consists of two \textbf{phases:}
     \begin{enumerate}
-        \item \textit{offline}: data from several smartphones sensors are collected. With these data th initial landmark graph is constructed. We update the landmark graph by adding more landmarks;
-        \item \textit{online}: newly collected data are used for location initialization, estimation and calibration.
-    \end{enumerate} 
+        \item \textit{Offline:}
+        \begin{itemize}
+            \item \textbf{Collect data} from several \textbf{smartphone sensors};
+            \item \textbf{Construct} the \textbf{initial landmark graph} and \textbf{update it} with more landmarks.
+        \end{itemize}
+        \item \textit{Online:}
+        \begin{itemize}
+            \item Use newly collected data for \textbf{location initialization}, \textbf{estimation}, and \textbf{calibration}.
+        \end{itemize}
+    \end{enumerate}
 
-    The initial location is inferred by a Hidden Markov model-based method and the location is regularly calibrated by matching the detected landmark with those in the landmark graph. 
-\end{frame}
-
-\begin{frame}{Challenges}
+    \textbf{Challenges:}
     \begin{enumerate}
-        \item Infer the initial location without manual input;
-        \item Recognize landmarks satisfying;
-        \item Deal with a landmark association issue and missing landmarks.
+        \item Infer the \textbf{initial location} without \textbf{manual input}.
+        \item \textbf{Recognize} landmarks \textbf{effectively}.
+        \item Handle \textbf{missing landmarks}.
     \end{enumerate}
 \end{frame}

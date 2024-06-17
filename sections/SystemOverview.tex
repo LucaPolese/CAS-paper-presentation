@@ -1,17 +1,16 @@
-\section{System Overview}
+\section[System]{System Overview}
 
 \begin{frame}{LG-Loc System Architecture}
     \begin{columns}
         \begin{column}{.6\textwidth}
             \begin{itemize}
-                \item Users launch the localization application upon entering a building and obtains his location;
-                \item Application requests the building's landmark graph stored in the server;
-                \item Data are preprocessed through a low-pass filter;
-                \item Data used for landmark detection and location estimation;
+                \item Users launch the \textbf{localization application} upon entering a \textbf{building} and obtains his \textbf{location};
+                \item Application requests the building's \textbf{landmark graph};
+                \item Data used for \textbf{landmark detection} and \textbf{location estimation};
                 \item Initial location obtained via:
                     \begin{itemize}
-                        \item WiFi fingerprinting (if database is available);
-                        \item HMM-based algorithm (if database is unavailable).
+                        \item \textit{WiFi fingerprinting} (if database is \textbf{available});
+                        \item \textit{HMM-based algorithm} (if database is \textbf{unavailable}).
                     \end{itemize}
             \end{itemize}
         \end{column}
